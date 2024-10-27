@@ -1,10 +1,17 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Header from './Header';
+import ProductForm from './ProductForm';
+import './App.css';
 
 function App() {
   const [count, setCount] = useState(0)
+  return (
+    <div className="App">
+      <Header image="https://media.istockphoto.com/id/1171385777/de/foto/nettes-mädchen-schließen-ihre-augen-im-badezimmer.jpg?s=612x612&w=0&k=20&c=h-svPudCG_feNvf4nuchrPhRbQQuYqLmTS9f3o6IFV0=" title="Produkt-Auswahl" />
+      <ProductForm />
+    </div>
+  );
+
 
   return (
     <>
