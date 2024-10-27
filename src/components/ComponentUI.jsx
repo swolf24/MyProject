@@ -1,12 +1,9 @@
-import React from 'react';
-
+// Header Komponente
 function Header({ image, title }) {
   return (
-    <div className="header">
-      <img className="header-image" src={image} alt="Header" />
+    <header className="header">
+      <img src={image} alt="Header" className="header-image" />
       <h1>{title}</h1>
-    </div>
+    </header>
   );
 }
-
-export default Header;
