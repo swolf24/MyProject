@@ -29,7 +29,7 @@ function ProductForm() {
     setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   }
 
-  // Hole den Preis des ausgewählten Produkts
+  
   const selectedProductPrice = priceP[selectedProductIndex];
   const total = selectedProductPrice * quantity;
 
@@ -37,7 +37,7 @@ function ProductForm() {
     <div className="product-form">
       <h2>Select product</h2>
 
-      {/* Product Dropdown */}
+  
       <div className="product-selection">
         <label>Product: </label>
         <select value={selectedProductIndex} onChange={handleProductChange}>
@@ -49,7 +49,7 @@ function ProductForm() {
         </select>
       </div>
 
-      {/* Quantity Selector */}
+      
       <div className="quantity-selection">
         <label>Quantity: </label>
         <button onClick={decrementQuantity} className="quantity-button">-</button>
@@ -57,7 +57,7 @@ function ProductForm() {
         <button onClick={incrementQuantity} className="quantity-button">+</button>
       </div>
 
-      {/* Order Info Table */}
+      
       <OrderInfo productName={nameP[selectedProductIndex]} quantity={quantity} total={total} />
     </div>
   );
