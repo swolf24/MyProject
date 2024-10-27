@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OrderInfo from './OrderInfo'; // Importiere OrderInfo-Komponente
+import OrderInfo from './OrderInfo';
 
 function ProductForm() {
   const nameP = [
