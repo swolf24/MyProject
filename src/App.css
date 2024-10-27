@@ -37,3 +37,48 @@
   margin: 0; /* Entferne zusätzlichen Rand */
   white-space: nowrap;
 }
+.product-form {
+  border: 1px solid #ccc;
+  padding: 20px;
+  width: 100%; /* Volle Breite */
+  max-width: 400px; /* Maximalbreite für das Formular */
+  margin: 0 auto; /* Zentriert das Formular */
+}
+
+/* Dropdown- und Mengenwahl-Styling */
+.product-selection,
+.quantity-selection {
+  margin-bottom: 20px;
+}
+
+/* Zentriere die Mengenwahl */
+.quantity-selection {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Zentriert den Mengenwähler */
+}
+
+/* Buttons für die Menge */
+.quantity-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+}
+
+.quantity-display {
+  margin: 0 10px;
+  font-weight: bold;
+}
+
+/* Styling für die Bestellinformationen-Tabelle */
+.order-info-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.order-info-table th,
+.order-info-table td {
+  border: 1px solid black;
+  padding: 8px;
+  text-align: center;
+}
