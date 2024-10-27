@@ -1,85 +1,36 @@
 .container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f7f7f7;
-}
-
-/* Box für den Inhalt */
-.content-box {
-  border: 2px solid #000;
-  padding: 20px;
-  width: 100%;
   max-width: 800px;
-  background-color: #fff;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
 }
 
-/* Header-Stile */
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  text-align: center;
   margin-bottom: 20px;
-  border-bottom: 1px solid #ccc;
-  padding-bottom: 10px;
 }
 
 .header-image {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  margin-right: 15px;
-}
-
-.header h1 {
-  font-size: 24px;
-  margin: 0;
-  white-space: nowrap;
-}
-
-/* Stile für das Produktformular */
-.product-form {
-  border: 1px solid #ccc;
-  padding: 20px;
   width: 100%;
-  max-width: 400px;
-  margin: 0 auto;
+  max-width: 600px;
+  border-radius: 8px;
 }
 
-.product-selection,
-.quantity-selection {
-  margin-bottom: 20px;
+ul {
+  list-style-type: none;
+  padding: 0;
 }
 
-.quantity-selection {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.quantity-button {
-  margin-left: 10px;
-  padding: 5px 10px;
-}
-
-.quantity-display {
-  margin: 0 10px;
+.error {
+  color: red;
   font-weight: bold;
 }
 
-/* Stile für die Bestellinformationen */
-.order-info-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 10px;
-}
-
-.order-info-table th,
-.order-info-table td {
-  border: 1px solid black;
-  padding: 8px;
-  text-align: center;
+.cocktail-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 20px;
 }
