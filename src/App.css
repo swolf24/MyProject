@@ -3,6 +3,11 @@ App {
   padding: 20px;
   max-width: 800px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh; 
 }
 
 .header {
@@ -16,6 +21,9 @@ App {
   width: 100px;
   height: 100px;
   border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto;
 }
 
 .product-form {
