@@ -16,12 +16,6 @@
   text-align: center;
 }
 
-.App {
-  font-family: Arial, sans-serif;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
 .header {
   display: flex;
   align-items: center;
