@@ -22,21 +22,27 @@ function CocktailFinder() {
   async function Search() {
     if (ingredient.trim() !== '') {
       setError(null); 
+      setCocktails([]); 
       try {
         const query = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`;
+        console.log('API query:', query); // 
+  
         const response = await fetch(query);
         
         if (!response.ok) {
           throw new Error('Network response was not ok');
         }
-
+  
         const data = await response.json(); 
-
+        console.log('API response data:', data); 
+  
         if (!data.drinks || data.drinks.length === 0) {
           setError(`No cocktails found for "${ingredient}". Please try a different ingredient.`); 
           setCocktails([]);
         } else {
           setCocktails(data.drinks);
+          setError(null);
+          console.log('Cocktails found:', data.drinks); 
         }
       } catch (err) {
         console.error('Error fetching data:', err);
