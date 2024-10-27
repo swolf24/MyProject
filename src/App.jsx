@@ -24,27 +24,24 @@ function CocktailFinder() {
       try {
         const query = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`;
         const response = await fetch(query);
+        
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
 
-        // Log the response status and data for debugging
-        console.log('Response Status:', response.status);
         const data = await response.json(); 
-        console.log('API Response:', data); 
 
-        // Check if drinks property exists
-        if (!data.drinks) {
-          setError('No cocktails found. Please try different ingredients.'); 
-          setCocktails([]);  
-        } else if (data.drinks.length === 0) {
-          setError('No cocktails found. Please try different ingredients.'); 
-          setCocktails([]);  
+        if (!data.drinks || data.drinks.length === 0) {
+          setError(`No cocktails found for "${ingredient}". Please try a different ingredient.`); 
+          setCocktails([]);
         } else {
-          setCocktails(data.drinks);  
+          setCocktails(data.drinks);
           setError(null);    
         }
       } catch (err) {
-        console.error('Fetch Error:', err);
-        setError(`Error: ${err.message}`);  
-        setCocktails([]);         
+        console.error('Error fetching data:', err);
+        setError(`Error: ${err.message}`);
+        setCocktails([]);
       }
     } else {
       alert('Please add an ingredient');
@@ -59,27 +56,31 @@ function CocktailFinder() {
         type="text"
         placeholder="Enter ingredient"
         value={ingredient}
-        onChange={(e) => setIngredient(e.target.value)}  // save the Input
+        onChange={(e) => setIngredient(e.target.value)}  // Save input
       />
 
       <button onClick={Search}>Search Cocktails</button>
 
       <div>
         <h2>Search results:</h2>
-        {error && <p className="error">{error}</p>}
-        {cocktails.length > 0 ? (     
-          <ul>                
-            {
-              cocktails.map((c) => (   
-                <li key={c.idDrink}>   
-                  <h3>{c.strDrink}</h3> 
-                  {c.strDrinkThumb && <img src={c.strDrinkThumb} alt={c.strDrink} style={{ width: '200px' }} />} 
-                </li>
-              ))
-            }
+        
+        {/* Fehlernachricht anzeigen */}
+        {error && <p className="error" style={{ color: 'red', fontWeight: 'bold' }}>{error}</p>}
+        
+        {/* Cocktail-Liste oder keine Ergebnisse anzeigen */}
+        {cocktails.length > 0 ? (
+          <ul>
+            {cocktails.map((c) => (
+              <li key={c.idDrink}>
+                <h3>{c.strDrink}</h3>
+                {c.strDrinkThumb && (
+                  <img src={c.strDrinkThumb} alt={c.strDrink} style={{ width: '200px' }} />
+                )}
+              </li>
+            ))}
           </ul>
         ) : (
-          !error && <p>No results found</p>  
+          !error && <p>No results found</p>
         )}
       </div>   
     </div>
