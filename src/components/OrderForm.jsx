@@ -33,3 +33,34 @@ function ProductForm() {
   const total = selectedProductPrice * quantity;
 
 }
+return (
+    <div className="product-form">
+      <h2>Select product</h2>
+
+      {/* Product Dropdown */}
+      <div className="product-selection">
+        <label>Product: </label>
+        <select value={selectedProductIndex} onChange={handleProductChange}>
+          {nameP.map((product, index) => (
+            <option key={index} value={index}>
+              {product} ({priceP[index]}€)
+            </option>
+          ))}
+        </select>
+      </div>
+
+      {/* Quantity Selector */}
+      <div className="quantity-selection">
+        <label>Quantity: </label>
+        <button onClick={decrementQuantity} className="quantity-button">-</button>
+        <span className="quantity-display">{quantity}</span>
+        <button onClick={incrementQuantity} className="quantity-button">+</button>
+      </div>
+
+      {/* Order Info Table */}
+      <OrderInfo productName={nameP[selectedProductIndex]} quantity={quantity} total={total} />
+    </div>
+  );
+  
+
+export default ProductForm;
