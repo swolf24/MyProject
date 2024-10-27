@@ -28,4 +28,8 @@ function ProductForm() {
   function decrementQuantity() {
     setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   }
+
+  const selectedProductPrice = priceP[selectedProductIndex];
+  const total = selectedProductPrice * quantity;
+
 }
