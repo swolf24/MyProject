@@ -1,5 +1,5 @@
 import React from 'react';
-// defines the header of the Page 
+
 function Header({ image, title }) {
   return (
     <header className="header">
@@ -9,4 +9,4 @@ function Header({ image, title }) {
   );
 }
 
-export default Header; 
+export default Header;
