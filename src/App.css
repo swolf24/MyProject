@@ -1,42 +1,39 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+.App {
+  font-family: Arial, sans-serif;
+  max-width: 800px; /* Maximalbreite der App */
+  margin: 0 auto; /* Zentriert die App horizontal */
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Zentriert den Header-Inhalt */
+  margin-bottom: 20px;
+  border-bottom: 2px solid #000; /* Dickere untere Grenze */
+  padding-bottom: 10px;
+}
+.header-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 15px; /* Abstand zwischen Bild und Text */
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+/* Reduziere die Schriftgröße des Header-Titels */
+.header h1 {
+  font-size: 24px; /* Schriftgröße des Titels */
+  margin: 0; /* Entferne zusätzlichen Rand */
+  white-space: nowrap;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 15px; /* Abstand zwischen Bild und Text */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
+/* Reduziere die Schriftgröße des Header-Titels */
+.header h1 {
+  font-size: 24px; /* Schriftgröße des Titels */
+  margin: 0; /* Entferne zusätzlichen Rand */
+  white-space: nowrap;
 }
