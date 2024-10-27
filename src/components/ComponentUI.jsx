@@ -2,10 +2,10 @@ import React from 'react';
 
 function Header({ image, title }) {
   return (
-    <header className="header">
-      <img src={image} alt="Header" className="header-image" />
+    <div className="header">
+      <img className="header-image" src={image} alt="Header" />
       <h1>{title}</h1>
-    </header>
+    </div>
   );
 }
 
