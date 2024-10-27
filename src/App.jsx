@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-// Header Komponente
+
 function Header({ image, title }) {
   return (
     <header className="header">
@@ -11,16 +11,17 @@ function Header({ image, title }) {
   );
 }
 
-// CocktailFinder Komponente
+
 function CocktailFinder() {
-  const [ingredient, setIngredient] = useState(''); // State für die Zutat
-  const [cocktails, setCocktails] = useState([]);   // State für Cocktails
-  const [error, setError] = useState(null);         // State für Fehler
+  const [ingredient, setIngredient] = useState(''); 
+  const [cocktails, setCocktails] = useState([]);   
+  const [error, setError] = useState(null);         
   
   const pI = "https://media.istockphoto.com/id/1303977605/de/foto/fünf-cocktails-in-den-händen-in-feierlichem-toast-verbunden.jpg?s=612x612&w=0&k=20&c=-j_G6Dm8mma1lOJdI0l-M5vNmwv1LQZuHES38lcQHVs=";
 
   async function Search() {
     if (ingredient.trim() !== '') {
+      setError(null); 
       try {
         const query = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`;
         const response = await fetch(query);
@@ -36,7 +37,6 @@ function CocktailFinder() {
           setCocktails([]);
         } else {
           setCocktails(data.drinks);
-          setError(null);    
         }
       } catch (err) {
         console.error('Error fetching data:', err);
@@ -56,7 +56,8 @@ function CocktailFinder() {
         type="text"
         placeholder="Enter ingredient"
         value={ingredient}
-        onChange={(e) => setIngredient(e.target.value)}  // Save input
+        onChange={(e) => setIngredient(e.target.value)}  
+        onKeyDown={(e) => e.key === 'Enter' && Search()} 
       />
 
       <button onClick={Search}>Search Cocktails</button>
@@ -64,10 +65,10 @@ function CocktailFinder() {
       <div>
         <h2>Search results:</h2>
         
-        {/* Fehlernachricht anzeigen */}
-        {error && <p className="error" style={{ color: 'red', fontWeight: 'bold' }}>{error}</p>}
+      
+        {error && <p className="error">{error}</p>}
         
-        {/* Cocktail-Liste oder keine Ergebnisse anzeigen */}
+        
         {cocktails.length > 0 ? (
           <ul>
             {cocktails.map((c) => (
