@@ -1,49 +1,64 @@
 .App {
   font-family: Arial, sans-serif;
-  max-width: 800px; /* Maximalbreite der App */
-  margin: 0 auto; /* Zentriert die App horizontal */
+  max-width: 800px; 
+  margin: 0 auto;
 }
 .header {
   display: flex;
   align-items: center;
-  justify-content: center; /* Zentriert den Header-Inhalt */
+  justify-content: center;
   margin-bottom: 20px;
-  border-bottom: 2px solid #000; /* Dickere untere Grenze */
+  border-bottom: 2px solid #000; 
   padding-bottom: 10px;
 }
 .header-image {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin-right: 15px; /* Abstand zwischen Bild und Text */
+  margin-right: 15px; 
 }
 
-/* Reduziere die Schriftgröße des Header-Titels */
+
 .header h1 {
-  font-size: 24px; /* Schriftgröße des Titels */
-  margin: 0; /* Entferne zusätzlichen Rand */
+  font-size: 24px; 
+  margin: 0; 
   white-space: nowrap;
 }
 .header-image {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  margin-right: 15px; /* Abstand zwischen Bild und Text */
+  margin-right: 15px;
 }
 
-/* Reduziere die Schriftgröße des Header-Titels */
+
 .header h1 {
-  font-size: 24px; /* Schriftgröße des Titels */
-  margin: 0; /* Entferne zusätzlichen Rand */
+  font-size: 24px; 
+  margin: 0; 
   white-space: nowrap;
+}
+.container {
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh; 
+}
+
+
+.content-box {
+  border: 2px solid #000; 
+  padding: 20px; 
+  width: 100%; 
+  max-width: 800px;
+  background-color: #fff; 
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
 .product-form {
   border: 1px solid #ccc;
   padding: 20px;
-  width: 100%; /* Volle Breite */
-  max-width: 400px; /* Maximalbreite für das Formular */
-  margin: 0 auto; /* Zentriert das Formular */
-}
+  width: 100%;
+  max-width: 400px; 
+  margin: 0 auto;
 
 /* Dropdown- und Mengenwahl-Styling */
 .product-selection,
