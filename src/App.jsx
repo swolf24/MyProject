@@ -1,20 +1,12 @@
-import React from 'react';
-import Header from './components/ComponentUI';
-import ProductForm from './components/OrderForm';
+import React, { useState } from 'react';
 import './App.css';
 
-function App() {
+// Header Komponente
+function Header({ image, title }) {
   return (
-    <div className="container"> 
-      <div className="content-box"> 
-        <Header 
-          image="https://media.istockphoto.com/id/1171385777/de/foto/nettes-mädchen-schließen-ihre-augen-im-badezimmer.jpg?s=612x612&w=0&k=20&c=h-svPudCG_feNvf4nuchrPhRbQQuYqLmTS9f3o6IFV0=" 
-          title="Produkt-Auswahl" 
-        />
-        <ProductForm />
-      </div>
-    </div>
+    <header className="header">
+      <img src={image} alt="Header" className="header-image" />
+      <h1>{title}</h1>
+    </header>
   );
 }
-
-export default App;
