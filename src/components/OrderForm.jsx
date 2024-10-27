@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import OrderInfo from './OrderInfo';
+import OrderInfo from './OrderInfo'; 
 
 function ProductForm() {
   const nameP = [
@@ -13,9 +13,9 @@ function ProductForm() {
     35,
     106,
   ];
+
   const [selectedProductIndex, setSelectedProductIndex] = useState(0);
   const [quantity, setQuantity] = useState(1);
-
 
   function handleProductChange(event) {
     setSelectedProductIndex(Number(event.target.value));
@@ -29,11 +29,11 @@ function ProductForm() {
     setQuantity(prevQuantity => (prevQuantity > 1 ? prevQuantity - 1 : 1));
   }
 
+  // Hole den Preis des ausgewählten Produkts
   const selectedProductPrice = priceP[selectedProductIndex];
   const total = selectedProductPrice * quantity;
 
-}
-return (
+  return (
     <div className="product-form">
       <h2>Select product</h2>
 
@@ -62,5 +62,7 @@ return (
     </div>
   );
   
+}
 
 export default ProductForm;
+
