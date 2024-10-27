@@ -16,7 +16,6 @@ function CocktailFinder() {
   const [ingredient, setIngredient] = useState(''); // State for ingredient
   const [cocktails, setCocktails] = useState([]);   // State for cocktails
   const [error, setError] = useState(null);         // State for errors
-  const [order, setOrder] = useState({});           // State to track cocktail orders
 
   const pI = "https://media.istockphoto.com/id/1303977605/de/foto/fünf-cocktails-in-den-händen-in-feierlichem-toast-verbunden.jpg?s=612x612&w=0&k=20&c=-j_G6Dm8mma1lOJdI0l-M5vNmwv1LQZuHES38lcQHVs=";
 
@@ -42,15 +41,6 @@ function CocktailFinder() {
       alert('Please add an ingredient');
     }
   }
-
-  // Function to handle ordering a cocktail
-  const orderCocktail = (cocktail) => {
-    setOrder((prevOrder) => ({
-      ...prevOrder,
-      [cocktail.idDrink]: (prevOrder[cocktail.idDrink] || 0) + 1,
-    }));
-    alert(`Ordered one more ${cocktail.strDrink}`);
-  };
 
   return (
     <div className="container">
@@ -78,12 +68,6 @@ function CocktailFinder() {
                 {cocktail.strDrinkThumb && (
                   <img src={cocktail.strDrinkThumb} alt={cocktail.strDrink} style={{ width: '200px', borderRadius: '8px' }} />
                 )}
-                <div style={{ marginTop: '10px' }}>
-                  <button onClick={() => orderCocktail(cocktail)} style={{ padding: '5px 10px' }}>
-                    Order
-                  </button>
-                  <p>Ordered: {order[cocktail.idDrink] || 0}</p>
-                </div>
               </li>
             ))}
           </ul>
@@ -96,4 +80,3 @@ function CocktailFinder() {
 }
 
 export default CocktailFinder;
-
