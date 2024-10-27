@@ -13,3 +13,6 @@ function ProductForm() {
     35,
     106,
   ];
+  const [selectedProductIndex, setSelectedProductIndex] = useState(0);
+  const [quantity, setQuantity] = useState(1);
+  
