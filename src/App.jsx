@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Header from './components/ComponentUI';
 import ProductForm from './components/OrderForm';
 import './App.css';
+import reactLogo from './assets/react.svg';
+import viteLogo from '/vite.svg';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -14,15 +16,16 @@ function App() {
       />
       <ProductForm />
 
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
+      {/* Separate section for Vite and React logos */}
+      <div className="logos-section">
+        <a href="https://vitejs.dev" target="_blank" rel="noopener noreferrer">
+          <img src={viteLogo} className="logo" alt="Vite logo" />
         </a>
-        <a href="https://react.dev" target="_blank">
-          <img src="/assets/react.svg" className="logo react" alt="React logo" />
+        <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
+          <img src={reactLogo} className="logo react" alt="React logo" />
         </a>
       </div>
-      
+
       <h1>Vite + React</h1>
       <div className="card">
         <button onClick={() => setCount((count) => count + 1)}>
