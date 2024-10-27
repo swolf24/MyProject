@@ -21,11 +21,12 @@ function CocktailFinder() {
 
   async function Search() {
     if (ingredient.trim() !== '') {
-      setError(null); 
-      setCocktails([]); 
+      setError(null); // Fehlerzustand zurücksetzen bei neuer Suche
+      setCocktails([]); // Cocktails zurücksetzen bei neuer Suche
+  
       try {
         const query = `https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredient}`;
-        console.log('API query:', query); // 
+        console.log('API query:', query); // Debug-Ausgabe: Zeigt die URL der API-Abfrage
   
         const response = await fetch(query);
         
@@ -34,15 +35,16 @@ function CocktailFinder() {
         }
   
         const data = await response.json(); 
-        console.log('API response data:', data); 
+        console.log('API response data:', data); // Debug-Ausgabe: Zeigt die erhaltenen Daten an
   
-        if (!data.drinks || data.drinks.length === 0) {
-          setError(`No cocktails found for "${ingredient}". Please try a different ingredient.`); 
+        // Zusätzliche Prüfung: Falls `data.drinks` nicht existiert oder kein Array ist
+        if (!data.drinks || !Array.isArray(data.drinks) || data.drinks.length === 0) {
+          setError(`No cocktails found for "${ingredient}". Please try a different ingredient.`);
           setCocktails([]);
         } else {
           setCocktails(data.drinks);
           setError(null);
-          console.log('Cocktails found:', data.drinks); 
+          console.log('Cocktails found:', data.drinks); // Debug-Ausgabe: Zeigt die Cocktail-Daten an
         }
       } catch (err) {
         console.error('Error fetching data:', err);
