@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './components/App'; // Stelle sicher, dass der Pfad korrekt ist
+import CocktailFinder from './App';  
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <App />
+    <CocktailFinder />
   </React.StrictMode>
 );
